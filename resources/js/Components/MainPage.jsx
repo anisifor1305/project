@@ -1,23 +1,23 @@
 export default function MainPage() {
     return (<>
     <h1>Управление проектами</h1>
-<div class="container">
-    <ul class="project-list">
-        <li class="project-item">
+<div className="container">
+    <ul className="project-list">
+        <li className="project-item">
             Проект №1
             <div>
                 <button>Отчитаться о выполнении</button>
                 <button>Изменить стадию</button>
             </div>
         </li>
-        <li class="project-item">
+        <li className="project-item">
             Проект №2
             <div>
                 <button>Отчитаться о выполнении</button>
                 <button>Изменить стадию</button>
             </div>
         </li>
-        <li class="project-item">
+        <li className="project-item">
             Проект №3
             <div>
                 <button>Отчитаться о выполнении</button>
@@ -26,7 +26,7 @@ export default function MainPage() {
         </li>
     </ul>
 
-    <form class="add-project-form">
+    <form className="add-project-form">
         <input type="text" placeholder="Название проекта"/>
         <select>
             <option value="">Выберите стадию</option>
