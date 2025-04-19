@@ -26,7 +26,7 @@ function RenderProjects(props) {
             <p>Описание: {project.lore}</p>
             
             <div>
-                <button action={`/report/${project.code_name}`}>Отчитаться о выполнении</button>
+                <button ><a href={`/report/${project.code_name}`}>Отчитаться о выполнении</a></button>
             </div>
         </li>
     );

@@ -2,6 +2,12 @@
 <html>
 <head>
 <style>
+    *{
+        text-decoration: none
+    }
+    a{
+        color: white
+    }
         body {
             font-family: 'Arial', sans-serif;
             background-color: #F0F0F0;

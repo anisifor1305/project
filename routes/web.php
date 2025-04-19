@@ -14,8 +14,4 @@ Route::get('/auth', function () {
 });
 Route::post('/auth', [App\Http\Controllers\AuthController::class, 'auth']);
 Route::post('/newproject',[App\Http\Controllers\NewProjectController::class, 'newProject']);
-// Route::get('/dashboard', function () {
-
-//     return Inertia::render('Admin');
-
-// })->name('dashboard');
+Route::get('/report/{project}', [App\Http\Controllers\ProjectDoneController::class, 'projectDone']);
