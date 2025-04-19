@@ -5,8 +5,9 @@ export default function user(props) {
     return (
         <>
         <h1>Управление проектами</h1>
+        {/* <p>{props.code_names[0]}</p> */}
     <div className="container">
-        <RenderProjects list={props.projects}   />
+        <RenderProjects code_names={props.code_names} lores={props.lores}   />
     </div>
         </>
     )
