@@ -1,12 +1,10 @@
-import { StrictMode } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Welcome from './Components/MainPage';
-
-const rootElement = document.getElementById('app');
-const root = createRoot(rootElement);
-
-root.render(
-    <StrictMode>
-        <Welcome />
-    </StrictMode>
-);
+import { createInertiaApp } from '@inertiajs/react';
+createInertiaApp({
+    resolve: name => import(`./Pages/${name}`),
+    setup({ el, App, props }) {
+        const root = createRoot(el);
+        root.render(<App {...props} />);
+    },
+});
