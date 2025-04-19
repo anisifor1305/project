@@ -10,10 +10,12 @@ class MainPageController extends Controller
     function showPanel(Request $request) {
         $user = User::where('login', session('login'))->first();
         if ($user->is_admin){
-            return Inertia::render('Admin');
+            // $user->projects = json_encode(['1', '2', '3']);
+            // $user->save();
+            return Inertia::render('Admin', ['message'=>'hello', 'token'=>csrf_token()]);
         }
         else{
-            return Inertia::render('User');
+            return Inertia::render('User', ['projects'=>$user->projects]);
         }
     }
 }

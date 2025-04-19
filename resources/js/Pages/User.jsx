@@ -1,18 +1,13 @@
 import React from 'react';
+import RenderProjects from '../Components/RenderProjects';
 
-// import Authenticated from '@/Layouts/Authenticated';
-
-// import { Inertia } from "@inertiajs/inertia";
-
-
-// import { Head, usePage, Link } from '@inertiajs/inertia-react';
-
-// import Pagination from '@/Components/Pagination';
-// import Layout from '@/layouts/authenticated';
-  
-
-export default function admin() {
-    return (<>
-    <h1>User</h1>
-    </>)
+export default function user(props) {
+    return (
+        <>
+        <h1>Управление проектами</h1>
+    <div className="container">
+        <RenderProjects list={props.projects}   />
+    </div>
+        </>
+    )
 }

@@ -13,6 +13,7 @@ Route::get('/auth', function () {
     return view('auth');
 });
 Route::post('/auth', [App\Http\Controllers\AuthController::class, 'auth']);
+Route::post('/newproject',[App\Http\Controllers\NewProjectController::class, 'newProject']);
 // Route::get('/dashboard', function () {
 
 //     return Inertia::render('Admin');
