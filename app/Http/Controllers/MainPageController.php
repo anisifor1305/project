@@ -20,11 +20,13 @@ class MainPageController extends Controller
         else{
             $arrCodeNames = array();
             $arrLores = array();
+            if($user->projects){
             for($i=0; $i<count(json_decode($user->projects)); $i++) {
                 $project = Project::where('code_name', json_decode($user->projects)[$i])->first();
                 array_push($arrCodeNames, $project->code_name);
                 array_push($arrLores, $project->lore);
             }
+        }
             return Inertia::render('User', ['code_names'=>$arrCodeNames, 'lores'=>$arrLores]);
         }
     }

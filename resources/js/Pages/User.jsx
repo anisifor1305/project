@@ -9,6 +9,7 @@ export default function user(props) {
     <div className="container">
         <RenderProjects code_names={props.code_names} lores={props.lores}   />
     </div>
+    <div><a href="/logout"><h4>Выйти</h4></a></div>
         </>
     )
 }

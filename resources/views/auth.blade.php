@@ -95,8 +95,7 @@
             </div>
             
             <button type="submit">Войти</button>
-        
-            <a href="/forgot-password">Забыли пароль?</a>
+            
         </form>
     </div>
 </body>

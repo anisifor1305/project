@@ -20,4 +20,8 @@ class AuthController extends Controller
             return view('autherror');
         }
     }
+    function logout(){
+        session()->flush();
+        return redirect('/');
+    }
 }
