@@ -13,7 +13,9 @@ class MainPageController extends Controller
         if ($user->is_admin){
             // $user->projects = json_encode(['1', '2', '3']);
             // $user->save();
-            return Inertia::render('Admin', ['message'=>'hello', 'token'=>csrf_token()]);
+            $projects = Project::all();
+            $users = User::all();
+            return Inertia::render('Admin', ['message'=>'hello', 'users'=>$users, 'projects'=>$projects, 'token'=>csrf_token()]);
         }
         else{
             $arrCodeNames = array();

@@ -19,6 +19,28 @@
             text-align: center;
             color: #3A7BD5;
         }
+        h4 {
+            color: #3A7BD5;
+        }
+        .users-item{
+            display:flex;
+            justify-content: flex-start;
+            color:grey;
+        }
+        .users-item{
+            p{
+                margin-right:50px;
+            }
+        }
+        .container2 {
+            margin: 0 auto;
+            margin-top: 30px;
+            width: 80%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,.1);
+        }
         
         .container {
             width: 80%;
@@ -28,7 +50,15 @@
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,.1);
         }
-        
+        <div className="container">
+    <h4>Создать проект</h4>
+    <form className="add-project-form" action="/newproject" method="post">
+        <input type="hidden" name="_token" value={props.token} autocomplete="off"></input>
+        <input type="text" name='code_name'placeholder="Кодовое имя проекта"/>
+        <input type="text" name='lore'placeholder="Описание"/>
+        <button type="submit">Создать</button>
+    </form>
+</div>
         ul.project-list {
             list-style: none;
             padding: 0;

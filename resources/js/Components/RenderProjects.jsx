@@ -1,18 +1,5 @@
+import { useDebugValue } from "react";
 function RenderProjects(props) {
-    // const stri = Object.values(listobj)[0]
-    // const cutstr = stri.slice(1, stri.length-1  )
-    // const readystr = cutstr.replaceAll('"', '');
-    // const arr = readystr.split(',')
-    // const listProjects = arr.map(project =>
-    //     <li className="project-item">
-    //             Проект {project}
-    //             <div>
-    //                 <button>Отчитаться о выполнении</button>
-    //             </div>
-    //         </li>
-    //     );
-    // return <ul className="project-list">{listProjects}</ul>;
-    // return <p>{arr}</p>
     const arr = [];
     for (let i = 0; i < props.code_names.length; i++) {
         const obj = {}
