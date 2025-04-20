@@ -31,7 +31,7 @@ class ProjectController extends Controller
     }
     function addProject(Request $request) {
         $user = User::where('login', $request->login)->first();
-        if((Project::where('code_name', $request->code_name)->first()) & User::where('login', $request->login)->first()){
+        if((Project::where('code_name', $request->code_name)->first()) && User::where('login', $request->login)->first() && !in_array($request->code_name, json_decode($user->projects))){
             $arrProjects = json_decode($user->projects);
             array_push($arrProjects, $request->code_name);
             $user->projects = $arrProjects;

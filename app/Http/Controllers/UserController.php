@@ -13,6 +13,7 @@ class UserController extends Controller
         $user->login=$request->login;
         $user->password_hash=password_hash($request->password, PASSWORD_BCRYPT);
         $user->is_admin=false;
+        $user->projects=json_encode([]);
         $user->save();
         return redirect('/');
 

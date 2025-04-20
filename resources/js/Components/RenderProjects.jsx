@@ -13,7 +13,7 @@ function RenderProjects(props) {
             <p>Описание: {project.lore}</p>
             
             <div>
-                <button ><a href={`/report/${project.code_name}`}>Отчитаться о выполнении</a></button>
+                <button style={{'display':props.forAdmin?'none':'block'}}><a href={`/report/${project.code_name}`}>Отчитаться о выполнении</a></button>
             </div>
         </li>
     );

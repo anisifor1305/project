@@ -10,7 +10,7 @@ class AuthController extends Controller
     function auth(Request $request){
 
         $user = User::where('login', $request->login)->first();
-        if (password_verify($request->password, $user->password_hash)){
+        if ($user && password_verify($request->password, $user->password_hash)){
             session(['userAuth'=>'true']);
             session(['login'=>$request->login]);
             return redirect('/');

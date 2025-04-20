@@ -1,16 +1,6 @@
 import React from 'react';
 import RenderProjects from '../Components/RenderProjects';
-import RenderUsers from '../Components/RenderUsers';
-
-// import Authenticated from '@/Layouts/Authenticated';
-
-// import { Inertia } from "@inertiajs/inertia";
-
-
-// import { Head, usePage, Link } from '@inertiajs/inertia-react';
-
-// import Pagination from '@/Components/Pagination';
-// import Layout from '@/layouts/authenticated';
+import RenderUsersAndProjects from '../Components/RenderUsersAndProjects';
   
 
 export default function admin(props) {
@@ -35,7 +25,7 @@ export default function admin(props) {
         <button type="submit">Добавить</button>
     </form>
     <div>    <h4>Пользователи и проекты, в которых они участвуют</h4>
-    <RenderUsers users={props.users} projects={props.projects} />
+    <RenderUsersAndProjects users={props.users} projects={props.projects} />
     </div>
 </div>
 <div className="container2">
@@ -46,8 +36,8 @@ export default function admin(props) {
         <input type="text" name='password' placeholder="пароль пользователя"/>
         <button type="submit">Добавить</button>
     </form>
-    <div>    <h4>Пользователи и проекты, в которых они участвуют</h4>
-    <RenderUsers users={props.users} projects={props.projects} />
+    <div>    <h4>Список всех проектов</h4>
+    <RenderProjects code_names={props.code_names} lores={props.lores} forAdmin={true}/>
     </div>
     <div><a href="/logout"><h4>Выйти</h4></a></div>
 </div>

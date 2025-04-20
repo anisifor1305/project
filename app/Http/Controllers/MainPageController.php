@@ -11,11 +11,14 @@ class MainPageController extends Controller
     function showPanel(Request $request) {
         $user = User::where('login', session('login'))->first();
         if ($user->is_admin){
-            // $user->projects = json_encode(['1', '2', '3']);
-            // $user->save();
-            $projects = Project::all();
+            $arrCodeNames = array();
+            $arrLores = array();
+            foreach (Project::all() as $project) {
+                array_push($arrCodeNames, $project->code_name);
+                array_push($arrLores, $project->lore);
+            }
             $users = User::all();
-            return Inertia::render('Admin', ['message'=>'hello', 'users'=>$users, 'projects'=>$projects, 'token'=>csrf_token()]);
+            return Inertia::render('Admin', ['message'=>'hello', 'users'=>$users, 'code_names'=>$arrCodeNames, 'lores'=>$arrLores, 'token'=>csrf_token()]);
         }
         else{
             $arrCodeNames = array();
